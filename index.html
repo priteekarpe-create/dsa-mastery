@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeetCode 150 – DSA Mastery</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+</head>
+<body>
+
+  <!-- ===== MOBILE OVERLAY ===== -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-logo">&#x1F9E0;</span>
+      <span class="sidebar-title">DSA Mastery</span>
+      <button class="sidebar-close" id="sidebar-close" aria-label="Close sidebar">&#x2715;</button>
+    </div>
+
+    <div class="sidebar-progress">
+      <div class="sidebar-progress-label">Overall Progress</div>
+      <div class="sidebar-progress-bar-wrap">
+        <div class="sidebar-progress-bar" id="sidebar-progress-bar"></div>
+      </div>
+      <div class="sidebar-progress-count" id="sidebar-progress-count">0 / 150</div>
+    </div>
+
+    <nav class="sidebar-nav" id="sidebar-nav">
+      <a href="#category-arrays-hashing"   class="sidebar-link" data-category="arrays-hashing">   <span class="nav-name">Arrays &amp; Hashing</span>    <span class="nav-badge">9</span></a>
+      <a href="#category-two-pointers"     class="sidebar-link" data-category="two-pointers">      <span class="nav-name">Two Pointers</span>          <span class="nav-badge">5</span></a>
+      <a href="#category-sliding-window"   class="sidebar-link" data-category="sliding-window">    <span class="nav-name">Sliding Window</span>        <span class="nav-badge">6</span></a>
+      <a href="#category-stack"            class="sidebar-link" data-category="stack">              <span class="nav-name">Stack</span>                 <span class="nav-badge">7</span></a>
+      <a href="#category-binary-search"    class="sidebar-link" data-category="binary-search">     <span class="nav-name">Binary Search</span>         <span class="nav-badge">7</span></a>
+      <a href="#category-linked-list"      class="sidebar-link" data-category="linked-list">       <span class="nav-name">Linked List</span>           <span class="nav-badge">11</span></a>
+      <a href="#category-trees"            class="sidebar-link" data-category="trees">              <span class="nav-name">Trees</span>                 <span class="nav-badge">15</span></a>
+      <a href="#category-tries"            class="sidebar-link" data-category="tries">              <span class="nav-name">Tries</span>                 <span class="nav-badge">3</span></a>
+      <a href="#category-heap"             class="sidebar-link" data-category="heap">               <span class="nav-name">Heap / Priority Queue</span><span class="nav-badge">7</span></a>
+      <a href="#category-backtracking"     class="sidebar-link" data-category="backtracking">      <span class="nav-name">Backtracking</span>          <span class="nav-badge">9</span></a>
+      <a href="#category-graphs"           class="sidebar-link" data-category="graphs">             <span class="nav-name">Graphs</span>                <span class="nav-badge">13</span></a>
+      <a href="#category-advanced-graphs"  class="sidebar-link" data-category="advanced-graphs">   <span class="nav-name">Advanced Graphs</span>       <span class="nav-badge">6</span></a>
+      <a href="#category-dp-1d"            class="sidebar-link" data-category="dp-1d">              <span class="nav-name">1-D Dynamic Programming</span><span class="nav-badge">12</span></a>
+      <a href="#category-dp-2d"            class="sidebar-link" data-category="dp-2d">              <span class="nav-name">2-D Dynamic Programming</span><span class="nav-badge">11</span></a>
+      <a href="#category-greedy"           class="sidebar-link" data-category="greedy">             <span class="nav-name">Greedy</span>                <span class="nav-badge">8</span></a>
+      <a href="#category-intervals"        class="sidebar-link" data-category="intervals">          <span class="nav-name">Intervals</span>             <span class="nav-badge">6</span></a>
+      <a href="#category-math-geometry"    class="sidebar-link" data-category="math-geometry">     <span class="nav-name">Math &amp; Geometry</span>      <span class="nav-badge">8</span></a>
+      <a href="#category-bit-manipulation" class="sidebar-link" data-category="bit-manipulation">  <span class="nav-name">Bit Manipulation</span>      <span class="nav-badge">7</span></a>
+    </nav>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <div class="main-wrapper">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <button class="hamburger" id="hamburger" aria-label="Open sidebar">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="topbar-brand">
+        <span class="topbar-logo">&#x1F9E0;</span>
+        <span class="topbar-title">NeetCode 150 – DSA Mastery</span>
+      </div>
+
+      <div class="topbar-controls">
+        <div class="search-wrap">
+          <span class="search-icon">&#x1F50D;</span>
+          <input type="text" id="search-input" class="search-input" placeholder="Search problems…" autocomplete="off" />
+          <button class="search-clear" id="search-clear" aria-label="Clear search">&#x2715;</button>
+        </div>
+
+        <select id="difficulty-filter" class="filter-select" aria-label="Filter by difficulty">
+          <option value="all">All Difficulties</option>
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+        </select>
+
+        <select id="pattern-filter" class="filter-select" aria-label="Filter by pattern">
+          <option value="all">All Patterns</option>
+          <option value="arrays-hashing">Arrays &amp; Hashing</option>
+          <option value="two-pointers">Two Pointers</option>
+          <option value="sliding-window">Sliding Window</option>
+          <option value="stack">Stack</option>
+          <option value="binary-search">Binary Search</option>
+          <option value="linked-list">Linked List</option>
+          <option value="trees">Trees</option>
+          <option value="tries">Tries</option>
+          <option value="heap">Heap / Priority Queue</option>
+          <option value="backtracking">Backtracking</option>
+          <option value="graphs">Graphs</option>
+          <option value="advanced-graphs">Advanced Graphs</option>
+          <option value="dp-1d">1-D Dynamic Programming</option>
+          <option value="dp-2d">2-D Dynamic Programming</option>
+          <option value="greedy">Greedy</option>
+          <option value="intervals">Intervals</option>
+          <option value="math-geometry">Math &amp; Geometry</option>
+          <option value="bit-manipulation">Bit Manipulation</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- PROGRESS BANNER -->
+    <div class="progress-banner">
+      <div class="progress-banner-inner">
+        <div class="progress-banner-text">
+          <span class="progress-label">Overall Progress</span>
+          <span class="progress-count" id="progress-count">0 / 150 completed</span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
+        <div class="progress-percent" id="progress-percent">0%</div>
+      </div>
+    </div>
+
+    <!-- NO-RESULTS -->
+    <div class="no-results hidden" id="no-results">
+      <div class="no-results-icon">&#x1F50D;</div>
+      <p>No problems match your search.</p>
+      <button id="clear-filters-btn" class="btn-clear-filters">Clear Filters</button>
+    </div>
+
+    <!-- PROBLEMS -->
+    <main class="content">
+      <div id="problems-container"></div>
+    </main>
+
+  </div><!-- /.main-wrapper -->
+
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top">&#x2191;</button>
+
+  <!-- ===== DATA FILES ===== -->
+  <script src="data/arrays-hashing.js"></script>
+  <script src="data/two-pointers.js"></script>
+  <script src="data/sliding-window.js"></script>
+  <script src="data/stack.js"></script>
+  <script src="data/binary-search.js"></script>
+  <script src="data/linked-list.js"></script>
+  <script src="data/trees.js"></script>
+  <script src="data/tries.js"></script>
+  <script src="data/heap.js"></script>
+  <script src="data/backtracking.js"></script>
+  <script src="data/graphs.js"></script>
+  <script src="data/advanced-graphs.js"></script>
+  <script src="data/dp-1d.js"></script>
+  <script src="data/dp-2d.js"></script>
+  <script src="data/greedy.js"></script>
+  <script src="data/intervals.js"></script>
+  <script src="data/math-geometry.js"></script>
+  <script src="data/bit-manipulation.js"></script>
+
+  <!-- PRISM CORE + JAVA -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+
+  <!-- APP -->
+  <script src="script.js"></script>
+</body>
+</html>
